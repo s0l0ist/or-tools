@@ -180,7 +180,7 @@ add_dependencies(java_package java_native_package)
 set(JAVA_TEST_PROJECT ortools-test)
 if(BUILD_TESTING)
   configure_file(
-    ${PROJECT_SOURCE_DIR}/java/pom-test.xml.in
+    ${PROJECT_SOURCE_DIR}/ortools/java/pom-test.xml.in
     ${PROJECT_BINARY_DIR}/java/pom-test.xml.in
     @ONLY)
 
@@ -197,7 +197,7 @@ if(BUILD_TESTING)
     java/${JAVA_TEST_PROJECT}/pom.xml
     COMMAND ${CMAKE_COMMAND} -E remove_directory src
     COMMAND ${CMAKE_COMMAND} -E make_directory ${JAVA_PACKAGE_PATH}
-    COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/java/Test.java ${JAVA_PACKAGE_PATH}/
+    COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/ortools/java/Test.java ${JAVA_PACKAGE_PATH}/
     COMMAND ${MAVEN_EXECUTABLE} compile
     COMMAND ${MAVEN_EXECUTABLE} package
     WORKING_DIRECTORY java/${JAVA_TEST_PROJECT})

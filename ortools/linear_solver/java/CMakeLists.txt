@@ -8,7 +8,7 @@ swig_add_library(jnilinear_solver
   TYPE OBJECT
   LANGUAGE java
   OUTPUT_DIR
-	${PROJECT_BINARY_DIR}/java/${PROJECT_NAME}/${JAVA_PACKAGE_PATH}/linearsolver
+	${PROJECT_BINARY_DIR}/java/${JAVA_PROJECT}/${JAVA_PACKAGE_PATH}/linearsolver
   SOURCES linear_solver.i)
 
 target_include_directories(jnilinear_solver PRIVATE ${JNI_INCLUDE_DIRS})

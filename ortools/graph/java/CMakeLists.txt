@@ -8,7 +8,7 @@ swig_add_library(jnigraph
   TYPE OBJECT
   LANGUAGE java
   OUTPUT_DIR
-	${PROJECT_BINARY_DIR}/java/${PROJECT_NAME}/${JAVA_PACKAGE_PATH}/graph
+	${PROJECT_BINARY_DIR}/java/${JAVA_PROJECT}/${JAVA_PACKAGE_PATH}/graph
   SOURCES graph.i)
 
 target_include_directories(jnigraph PRIVATE ${JNI_INCLUDE_DIRS})

@@ -8,7 +8,7 @@ swig_add_library(jnisat
   TYPE OBJECT
   LANGUAGE java
   OUTPUT_DIR
-	${PROJECT_BINARY_DIR}/java/${PROJECT_NAME}/${JAVA_PACKAGE_PATH}/sat
+	${PROJECT_BINARY_DIR}/java/${JAVA_PROJECT}/${JAVA_PACKAGE_PATH}/sat
   SOURCES sat.i)
 
 target_include_directories(jnisat PRIVATE ${JNI_INCLUDE_DIRS})

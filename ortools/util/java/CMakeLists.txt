@@ -8,7 +8,7 @@ swig_add_library(jniutil
   TYPE OBJECT
   LANGUAGE java
   OUTPUT_DIR
-	${PROJECT_BINARY_DIR}/java/${PROJECT_NAME}/${JAVA_PACKAGE_PATH}/util
+	${PROJECT_BINARY_DIR}/java/${JAVA_PROJECT}/${JAVA_PACKAGE_PATH}/util
   SOURCES sorted_interval_list.i)
 
 target_include_directories(jniutil PRIVATE ${JNI_INCLUDE_DIRS})

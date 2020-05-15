@@ -82,8 +82,7 @@ set_target_properties(jniortools PROPERTIES
   POSITION_INDEPENDENT_CODE ON)
 # note: macOS is APPLE and also UNIX !
 if(APPLE)
-  set_target_properties(jniortools PROPERTIES
-    INSTALL_RPATH "@loader_path")
+  set_target_properties(jniortools PROPERTIES INSTALL_RPATH "@loader_path")
   # Xcode fails to build if library doesn't contains at least one source file.
   if(XCODE)
     file(GENERATE
@@ -139,7 +138,8 @@ add_custom_target(java_native_package
   java/${JAVA_NATIVE_PROJECT}/pom.xml
   COMMAND ${CMAKE_COMMAND} -E remove_directory src
   COMMAND ${CMAKE_COMMAND} -E make_directory ${JAVA_RESOURCES_PATH}/${NATIVE_IDENTIFIER}
-  COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:ortools> ${JAVA_RESOURCES_PATH}/${NATIVE_IDENTIFIER}/
+  COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${PROJECT_NAME}> ${JAVA_RESOURCES_PATH}/${NATIVE_IDENTIFIER}/
+  COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_SONAME_FILE:${PROJECT_NAME}> ${JAVA_RESOURCES_PATH}/${NATIVE_IDENTIFIER}/
   COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:jniortools> ${JAVA_RESOURCES_PATH}/${NATIVE_IDENTIFIER}/
   COMMAND ${MAVEN_EXECUTABLE} compile
   COMMAND ${MAVEN_EXECUTABLE} package
